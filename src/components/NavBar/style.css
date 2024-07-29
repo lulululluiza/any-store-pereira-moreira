@@ -27,7 +27,7 @@ a {
 .NavIcones {
     display: flex;
     gap: 25px;
-    font-size: 25px;
+    font-size: 30px;
 }
 
 nav {
@@ -56,3 +56,17 @@ nav {
     gap: 25px;
 }
 
+.NavCart {
+    position: relative;
+}
+
+.NavCart span {
+    position: absolute;
+    left: 15px;
+    bottom: 25px;
+    padding: 0 6px;
+    border-radius: 3px;
+    background-color: #FFD43B;
+    margin-left: 5px;
+    font-size: 18px;
+}

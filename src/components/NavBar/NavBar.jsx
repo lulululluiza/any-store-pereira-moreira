@@ -1,5 +1,5 @@
 import "./style.css"
-import logo from './logo-placeholder.png';
+import logo from './logo-placeholder.png'
 import CartWidget from './CartWidget'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
@@ -10,7 +10,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 //'@fortawesome/free-regular-svg-icons'
 //'@fortawesome/free-solid-svg-icons'
 
-function NavBar() {
+export default function NavBar() {
     return (
         <div className="NavBar">
             <div className="NavSuperior">
@@ -55,5 +55,3 @@ function NavBar() {
 /*
 - Uma barra de busca
 */ 
-
-export default NavBar
