@@ -1,0 +1,38 @@
+.CountContainer {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.CountActions {
+    width: 45%;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #C9C9C9;
+    border-radius: 3px;
+    margin-bottom: 7px;
+}
+
+.CountButton {
+    padding: 8px 15px;
+    background-color: white;
+    border: none;
+    font-size: 16px;
+}
+
+.CountInput {
+    border: none;
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.AddCartButton {
+    font-size: 12px;
+    width: 45%;
+    background-color: #FAB529;
+    padding: 10px 5px;
+    border-radius: 3px;
+    border: none;
+}

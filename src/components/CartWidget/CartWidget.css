@@ -1,0 +1,14 @@
+.Cart {
+    position: relative;
+}
+
+.Cart span {
+    position: absolute;
+    left: 15px;
+    bottom: 25px;
+    padding: 0 6px;
+    border-radius: 3px;
+    background-color: #FFD43B;
+    margin-left: 5px;
+    font-size: 18px;
+}

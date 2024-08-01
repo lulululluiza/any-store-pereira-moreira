@@ -1,6 +1,6 @@
-import "./style.css"
+import "./NavBar.css"
 import logo from './logo-placeholder.png'
-import CartWidget from './CartWidget'
+import CartWidget from '../CartWidget/CartWidget'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
