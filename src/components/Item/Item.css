@@ -1,0 +1,25 @@
+.Item {
+    max-width: 400px;
+    margin-bottom: 50px;
+}
+
+.Item img {
+    max-width: 400px;
+}
+
+.ItemDescription {
+    font-size: 12px;
+}
+
+.ItemPrice {
+    color: #FAB529;
+    margin-bottom: 5px;
+}
+
+.Item a {
+    border: 2px solid #FAB529;
+    background-color: #ffca61;
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 5px;
+}

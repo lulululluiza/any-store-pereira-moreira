@@ -1,4 +1,7 @@
 import ItemCount from '../ItemCount/ItemCount'
+import ItemList from '../ItemList/ItemList'
+import './ItemListContainer.css'
+
 import { useState } from 'react'
 
 export default function ItemListContainer() {
@@ -8,8 +11,8 @@ export default function ItemListContainer() {
     const inicial = 5
 
     return (
-        <div>
-            <p>ItemListContainer goes here! Available Soon!</p>
+        <div className='ItemListContainer'>
+            <ItemList />
             <ItemCount count={count} setCount={setCount} stock={stock} inicial={inicial} />
         </div>
     )
