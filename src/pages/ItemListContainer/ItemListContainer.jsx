@@ -1,19 +1,61 @@
-import ItemCount from '../../components/ItemCount/ItemCount'
 import ItemList from '../../components/ItemList/ItemList'
 import './ItemListContainer.css'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 
 export default function ItemListContainer() {
 
-    const [count, setCount] = useState(0)
-    const stock = 10
-    const inicial = 5
+    const {categoryId} = useParams()
+    const [products, setProducts] = useState([]) 
+    const [allProducts, setAllProducts] = useState([]) 
+
+    const itensGet = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(
+                [
+                    { id: 1, title: 'Produto 1', description: 'Descrição 1', price: '20.20', categoryId: 1, stock: 10, pictureUrl: 'https://freemockupzone.com/wp-content/uploads/2022/06/Free-Packaging-Product-Box-Mockup.jpg' },
+                    { id: 2, title: 'Produto 2', description: 'Descrição 2', price: '20.20', categoryId: 2, stock: 10, pictureUrl: 'https://freemockupzone.com/wp-content/uploads/2022/06/Free-Packaging-Product-Box-Mockup.jpg' },
+                    { id: 3, title: 'Produto 3', description: 'Descrição 3', price: '20.20', categoryId: 3, stock: 10, pictureUrl: 'https://freemockupzone.com/wp-content/uploads/2022/06/Free-Packaging-Product-Box-Mockup.jpg' },
+                    { id: 4, title: 'Produto 4', description: 'Descrição 4', price: '20.20', categoryId: 4, stock: 10, pictureUrl: 'https://freemockupzone.com/wp-content/uploads/2022/06/Free-Packaging-Product-Box-Mockup.jpg' },
+                    { id: 5, title: 'Produto 5', description: 'Descrição 5', price: '20.20', categoryId: 5, stock: 10, pictureUrl: 'https://freemockupzone.com/wp-content/uploads/2022/06/Free-Packaging-Product-Box-Mockup.jpg' }
+                ]
+            )
+        }, 2000)
+    })
+
+    function categoryFilter(categoryId) {
+        // return data.filter((item) => {
+        //     if(item.categoryId == categoryId) {
+        //         return item
+        //     }
+        // })
+        console.log(allProducts)
+
+        return allProducts.filter(item => item.categoryId === Number.parseInt(categoryId))
+    }
+
+    useEffect(() => {
+
+        if(categoryId && allProducts.length) {
+            const filtrado = categoryFilter(categoryId)
+            setProducts(filtrado)
+        }
+            
+    }, [categoryId, allProducts])
+
+    useEffect(() => {
+
+        itensGet
+            .then((response) => {
+                setAllProducts(response)
+                setProducts(response)
+            })           
+    }, [])    
 
     return (
         <div className='ItemListContainer'>
-            <ItemList />
-            <ItemCount count={count} setCount={setCount} stock={stock} inicial={inicial} />
+            <ItemList products={products}/>
         </div>
     )
 }

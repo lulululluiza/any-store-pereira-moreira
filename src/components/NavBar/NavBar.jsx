@@ -1,5 +1,6 @@
 import "./NavBar.css"
 import logo from './logo-placeholder.png'
+import { Link } from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
@@ -38,13 +39,12 @@ export default function NavBar() {
                         Categorias
                     </a>
                 </div>
-                <div className="NavCategoriasPopular">
-                    <a href="#">Mais vendidos</a>
-                    <a href="#">Eletrônicos</a>
-                    <a href="#">Livros</a>
-                    <a href="#">Casa</a>
-                    <a href="#">Roupas</a>
-                    <a href="#">Games</a>
+                <div className="NavCategoriasPopular">                    
+                    <Link to={`/category/${1}`}>Blusas</Link>
+                    <Link to={`/category/${2}`}>Vestidos</Link>
+                    <Link to={`/category/${3}`}>Calçados</Link>
+                    <Link to={`/category/${4}`}>Calças</Link>
+                    <Link to={`/category/${5}`}>Moletons</Link>
                 </div>
             </nav>
         </div>
