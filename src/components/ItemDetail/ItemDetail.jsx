@@ -17,7 +17,7 @@ export default function ItemDetail(props) {
                     </p>
                     <p className='ItemDetailInfosInstallment'>ou em até 20x de R${(valorSemDesconto/20).toString().replace('.',',')}</p>
                 </div>
-                <button type="button">COMPRAR</button>
+                <button type="button" class="ItemDetailBuy">COMPRAR</button>
             </div>
         </div>
     )
