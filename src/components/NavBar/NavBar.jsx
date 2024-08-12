@@ -15,7 +15,9 @@ export default function NavBar() {
     return (
         <div className="NavBar">
             <div className="NavSuperior">
-                <img src={logo} alt="logo"/>
+                <Link to='/'>
+                    <img src={logo} alt="logo"/>
+                </Link>
                 <div className="NavBusca">
                     <input type="text" name="" id="" placeholder="Digite o item procurado..."/>
                     <a href="#">

@@ -1,7 +1,6 @@
 import './ItemDetail.css'
 
 export default function ItemDetail(props) {
-    //{ id: 1, title: 'Produto 1', description: 'Descrição 1', price: '20.20'
     const valorSemDesconto = (parseInt(props.price) * 130) / 100
 
     return (
@@ -9,6 +8,7 @@ export default function ItemDetail(props) {
             <img src={props.pictureUrl} alt={`Imagem do produto ${props.title}`} />
             <div>
                 <div className='ItemDetailInfos'>
+                    <h2>{props.title}</h2>
                     <p>Vendido e entregue por Any Store</p>
                     <p className='ItemDetailInfosPrice'>De R$ {valorSemDesconto} por 
                         <br/>

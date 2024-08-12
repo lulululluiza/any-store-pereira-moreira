@@ -10,7 +10,7 @@ export default function ItemListContainer() {
     const [products, setProducts] = useState([]) 
     const [allProducts, setAllProducts] = useState([]) 
 
-    const itensGet = new Promise((resolve, reject) => {
+    const productsGet = new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(
                 [
@@ -25,12 +25,12 @@ export default function ItemListContainer() {
     })
 
     function categoryFilter(categoryId) {
+        // mesma coisa que o return abaixo
         // return data.filter((item) => {
         //     if(item.categoryId == categoryId) {
         //         return item
         //     }
         // })
-        console.log(allProducts)
 
         return allProducts.filter(item => item.categoryId === Number.parseInt(categoryId))
     }
@@ -46,7 +46,7 @@ export default function ItemListContainer() {
 
     useEffect(() => {
 
-        itensGet
+        productsGet
             .then((response) => {
                 setAllProducts(response)
                 setProducts(response)
