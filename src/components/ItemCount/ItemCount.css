@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 15px;
 }
 
 .CountActions {
@@ -31,7 +32,7 @@
 
 .AddCartButton {
     font-size: 12px;
-    width: 45%;
+    width: 100%;
     background-color: #FAB529;
     padding: 10px 5px;
     border-radius: 3px;

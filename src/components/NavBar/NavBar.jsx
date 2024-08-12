@@ -1,5 +1,6 @@
 import "./NavBar.css"
-import logo from './logo-placeholder.png'
+// import logo from './logo-placeholder.png'
+import logo from './logo.png'
 import { Link } from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
