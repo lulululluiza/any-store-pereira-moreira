@@ -1,6 +1,11 @@
 import './ItemDetail.css'
+import ItemCount from '../ItemCount/ItemCount'
+import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
 export default function ItemDetail(props) {
+    const [count, setCount] = useState(0)
+    
     const valorSemDesconto = (parseInt(props.price) * 130) / 100
 
     return (
@@ -17,8 +22,9 @@ export default function ItemDetail(props) {
                     </p>
                     <p className='ItemDetailInfosInstallment'>ou em até 20x de R${(valorSemDesconto/20).toString().replace('.',',')}</p>
                 </div>
-                <button type="button" class="ItemDetailBuy">COMPRAR</button>
-            </div>
+                <ItemCount count={count} setCount={setCount} stock={props.stock} />
+                <NavLink to='/cart' className="ItemDetailBuy">COMPRAR</NavLink>
+            </div>            
         </div>
     )
 }

@@ -1,7 +1,6 @@
 .ItemDetail {
   margin: 100px;
-  display: flex;
-  
+  display: flex;  
   gap: 250px;
 }
 
