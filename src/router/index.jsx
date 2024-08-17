@@ -17,6 +17,10 @@ export default function Router() {
                     path="/item/:itemId"
                     element={<ItemDetailContainer />}
                 />
+                <Route
+                    exact
+                    path="/cart"
+                />
             </Routes>
         </div>
     );

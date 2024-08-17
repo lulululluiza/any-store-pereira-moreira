@@ -1,7 +1,16 @@
 import './ItemDetail.css'
+import ItemCount from '../ItemCount/ItemCount'
+import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
 export default function ItemDetail(props) {
+    const [count, setCount] = useState(0)
+
     const valorSemDesconto = (parseInt(props.price) * 130) / 100
+
+    function add(qtd) {
+        alert(`Alert direto do ItemDetail = foi selecionado ${qtd} itens!`)
+    }
 
     return (
         <div className='ItemDetail'>
@@ -16,9 +25,13 @@ export default function ItemDetail(props) {
                         <span className='ItemDetailInfosPriceDiscount'>30% OFF!</span>
                     </p>
                     <p className='ItemDetailInfosInstallment'>ou em até 20x de R${(valorSemDesconto/20).toString().replace('.',',')}</p>
+                    <p>Estoque: {props.stock}</p>
                 </div>
-                <button type="button" class="ItemDetailBuy">COMPRAR</button>
-            </div>
+                <ItemCount count={count} setCount={setCount} stock={props.stock} onBuy={add} />
+                <div className="ItemDetailBuy">
+                    <NavLink to='/cart'>COMPRAR</NavLink>
+                </div>
+            </div>            
         </div>
     )
 }
