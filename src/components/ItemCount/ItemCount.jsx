@@ -14,7 +14,7 @@ export default function ItemCount(props) {
     }
 
     function addToCart() {
-        props.onBuy(props.count)        
+        props.onAdd(props.count)        
     }
 
     return (
