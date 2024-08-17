@@ -1,15 +1,17 @@
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { useCart } from '../../context/CartProvider'
 
 export default function ItemDetail(props) {
     const [count, setCount] = useState(0)
+    const { addToCart } = useCart()
 
     const valorSemDesconto = (parseInt(props.price) * 130) / 100
 
-    function add(qtd) {
-        alert(`Alert direto do ItemDetail = foi selecionado ${qtd} itens!`)
+    function add(quantity) {
+        addToCart(props, quantity)
     }
 
     return (
@@ -27,7 +29,7 @@ export default function ItemDetail(props) {
                     <p className='ItemDetailInfosInstallment'>ou em até 20x de R${(valorSemDesconto/20).toString().replace('.',',')}</p>
                     <p>Estoque: {props.stock}</p>
                 </div>
-                <ItemCount count={count} setCount={setCount} stock={props.stock} onBuy={add} />
+                <ItemCount count={count} setCount={setCount} stock={props.stock} onAdd={add} />
                 <div className="ItemDetailBuy">
                     <NavLink to='/cart'>COMPRAR</NavLink>
                 </div>
