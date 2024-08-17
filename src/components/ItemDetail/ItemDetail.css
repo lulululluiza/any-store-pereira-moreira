@@ -7,6 +7,7 @@
 .ItemDetailInfos {
   font-size: 25px;
   font-weight: 600;  
+  margin-bottom: 10px;
 }
 
 .ItemDetailInfosPrice {
@@ -50,6 +51,7 @@
 
 .ItemDetailBuy {
   margin-top: 20px;
+  width: fit-content;
   background-color: #FAB529;
   color: #FFFFFF;
   border: none;

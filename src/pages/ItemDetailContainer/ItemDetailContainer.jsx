@@ -32,7 +32,7 @@ export default function ItemDetailContainer() {
             />
         setProduct(product)
     })
-    
+
     return (
         <div className='ItemDetailContainer'>
             {product}  
