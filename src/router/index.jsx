@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import ItemListContainer from "../pages/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "../pages/ItemDetailContainer/ItemDetailContainer";
+import Cart from "../pages/Cart/Cart";
 
 export default function Router() {
     return (
@@ -20,6 +21,7 @@ export default function Router() {
                 <Route
                     exact
                     path="/cart"
+                    element={<Cart />}
                 />
             </Routes>
         </div>

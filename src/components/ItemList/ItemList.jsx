@@ -5,7 +5,7 @@ export default function ItemList(props) {
     return (
         <div className='ItemList'>            
             {props.products.map(item => {
-                return(
+                return (
                     <Item 
                         key={item.id}
                         {...item}

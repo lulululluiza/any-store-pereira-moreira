@@ -20,7 +20,7 @@ export default function ItemDetailContainer() {
                     { id: 5, title: 'Produto 5', description: 'Descrição 5', price: '20.20', categoryId: 5, stock: 6, pictureUrl: 'https://freemockupzone.com/wp-content/uploads/2022/06/Free-Packaging-Product-Box-Mockup.jpg' }
                 ]
             )
-        }, 2000)
+        }, 1000)
     })
 
     productsGet.then(response => {
