@@ -1,8 +1,8 @@
-.Cart {
+.CartWidget {
     position: relative;
 }
 
-.Cart span {
+.CartWidget span {
     position: absolute;
     left: 15px;
     bottom: 25px;

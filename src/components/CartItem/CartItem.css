@@ -1,0 +1,21 @@
+.CartItemProduct {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 30px;
+    border: 3px solid #FAB529;
+    border-radius: 20px;
+    align-items: center;
+    padding: 10px;
+}
+
+.CartItemProductImg {
+    width: 15%;
+}
+
+.CartItemProductActions {
+    margin-top: 10px;
+    background-color: #FAB529;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+}

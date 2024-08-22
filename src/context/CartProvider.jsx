@@ -10,12 +10,11 @@ export default function CartProvider({ children }) {
         const isDuplicatedItem = isInCart(item.id)
         if (!isDuplicatedItem) {
             setCart([ ...cart, [item, quantity] ])
-            console.log(cart)
         }
     }
 
     function removeFromCart(itemId) {
-
+        setCart(cart.filter((item => item[0].id !== itemId)))
     }
 
     function clearCart() {
@@ -33,8 +32,40 @@ export default function CartProvider({ children }) {
         return isDuplicated
     }
 
+    function totalItemCart(item) {
+        let totalItem = item[0].price * item[1]
+
+        return totalItem.toFixed(2)
+    }
+
+    function totalCart() {
+        let TotalCart = 0
+        
+        cart.forEach(item => {
+            TotalCart += item[0].price * item[1]
+        })
+        return TotalCart.toFixed(2)
+    }
+
+    function updateCart(itemId, quantity) {
+        let updatedCart = []
+
+        if(quantity === 0) {
+            removeFromCart(itemId)
+        } else {
+            updatedCart = cart.map(item => {
+                if(item[0].id === itemId) {
+                    item[1] = quantity
+                }
+                return item
+                })
+            setCart(updatedCart)
+        }
+        
+    }
+
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateCart, totalItemCart, totalCart }}>
             { children }
         </CartContext.Provider>
     )

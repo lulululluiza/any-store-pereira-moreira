@@ -26,10 +26,10 @@ export default function ItemDetail(props) {
                         <span className='ItemDetailInfosPriceNew'>R$ {props.price.replace('.',',')}</span>
                         <span className='ItemDetailInfosPriceDiscount'>30% OFF!</span>
                     </p>
-                    <p className='ItemDetailInfosInstallment'>ou em até 20x de R${(valorSemDesconto/20).toString().replace('.',',')}</p>
+                    <p className='ItemDetailInfosInstallment'>ou em até 20x de R${(valorSemDesconto/20).toFixed(2).toString().replace('.',',')}</p>
                     <p>Estoque: {props.stock}</p>
                 </div>
-                <ItemCount count={count} setCount={setCount} stock={props.stock} onAdd={add} />
+                <ItemCount count={count} setCount={setCount} stock={props.stock} onAdd={ add } />
                 <div className="ItemDetailBuy">
                     <NavLink to='/cart'>COMPRAR</NavLink>
                 </div>

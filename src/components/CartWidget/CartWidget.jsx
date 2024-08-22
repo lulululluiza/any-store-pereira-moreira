@@ -10,7 +10,7 @@ export default function CartWidget(props) {
     const { cart } = useCart()
     
     return (
-        <div className="Cart">
+        <div className="CartWidget">
             <Link to="/cart">
                 <FontAwesomeIcon icon={faCartShopping} style={{color: "#b197fc"}}/>
                 <span id="CartNumber">{cart.length}</span>

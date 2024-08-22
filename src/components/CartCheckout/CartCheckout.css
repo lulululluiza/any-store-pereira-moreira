@@ -1,0 +1,16 @@
+.CartCheckoutSeparator {
+    background-color: #FAB529;
+    height: 3px;
+    margin: 15px 0;
+}
+
+.CartCheckout p {
+    font-size: 30px;
+    text-align: center;
+}
+
+.CartCheckout p span{
+    font-size: 32px;
+    font-weight: bold;
+    color: #FAB529;
+}
