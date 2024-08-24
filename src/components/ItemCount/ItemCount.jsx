@@ -24,7 +24,7 @@ export default function ItemCount(props) {
                 <input className="CountInput" type="text" value={props.count}/>
                 <button className="CountButton" onClick={add}>+</button>
             </div>
-            <button className="AddCartButton" onClick={addToCart}>Adicionar</button>
+            <button className="AddCartButton" onClick={addToCart}>{ props.mode }</button>
         </div>
     )
 }

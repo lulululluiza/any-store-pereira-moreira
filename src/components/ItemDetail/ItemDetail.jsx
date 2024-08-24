@@ -15,6 +15,10 @@ export default function ItemDetail(props) {
             addToCart(props, quantity)
     }
 
+    function buyNow() {
+        addToCart(props, count ? count > 0 : 1)
+    }
+
     return (
         <div className='ItemDetail'>
             <img src={props.pictureUrl} alt={`Imagem do produto ${props.title}`} />
@@ -30,9 +34,9 @@ export default function ItemDetail(props) {
                     <p className='ItemDetailInfosInstallment'>ou em até 20x de R${(valorSemDesconto/20).toFixed(2).toString().replace('.',',')}</p>
                     <p>Estoque: {props.stock}</p>
                 </div>
-                <ItemCount count={count} setCount={setCount} stock={props.stock} onAdd={ add } />
+                <ItemCount count={count} setCount={setCount} stock={props.stock} onAdd={ add } mode={'Adicionar'}/>
                 <div className="ItemDetailBuy">
-                    <NavLink to='/cart'>COMPRAR</NavLink>
+                    <NavLink to='/cart' onClick={ buyNow }>COMPRAR</NavLink>
                 </div>
             </div>            
         </div>

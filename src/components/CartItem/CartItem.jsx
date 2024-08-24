@@ -29,7 +29,7 @@ export default function CartItem(props) {
         <h1>{props[0].title}</h1>
         <button type='button' className="CartItemProductActions" onClick={ () => removeFromCart(props[0].id) }>Excluir</button>
       </div>
-      <ItemCount count={count} setCount={setCount} stock={props[0].stock} onAdd={ update }/>
+      <ItemCount count={count} setCount={setCount} stock={props[0].stock} onAdd={ update } mode={ count > 0 ? 'Adicionar' : 'Remover' }/>
       <p>R$ <span>{ totalItemCart(props) }</span></p>
     </div>
   );
