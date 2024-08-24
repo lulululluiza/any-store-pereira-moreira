@@ -42,11 +42,11 @@ export default function NavBar() {
                     </a>
                 </div>
                 <div className="NavCategoriasPopular">                    
-                    <Link to={`/category/${1}`}>Blusas</Link>
-                    <Link to={`/category/${2}`}>Vestidos</Link>
-                    <Link to={`/category/${3}`}>Calçados</Link>
-                    <Link to={`/category/${4}`}>Calças</Link>
-                    <Link to={`/category/${5}`}>Moletons</Link>
+                    <Link to={`/category/blusas`}>Blusas</Link>
+                    <Link to={`/category/vestidos`}>Vestidos</Link>
+                    <Link to={`/category/calcados`}>Calçados</Link>
+                    <Link to={`/category/calcas`}>Calças</Link>
+                    <Link to={`/category/moletons`}>Moletons</Link>
                 </div>
             </nav>
         </div>

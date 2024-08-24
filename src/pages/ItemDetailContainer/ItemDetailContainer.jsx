@@ -3,35 +3,28 @@ import ItemDetail from '../../components/ItemDetail/ItemDetail'
 
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { doc, getDoc } from 'firebase/firestore'
+import db from '../../service/firebase'
 
 export default function ItemDetailContainer() {
 
     const [product, setProduct] = useState([]) 
     const { itemId } = useParams()
 
-    const productsGet = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(
-                [
-                    { id: 1, title: 'Produto 1', description: 'Descrição 1', price: '20.20', categoryId: 1, stock: 2, pictureUrl: 'https://freemockupzone.com/wp-content/uploads/2022/06/Free-Packaging-Product-Box-Mockup.jpg' },
-                    { id: 2, title: 'Produto 2', description: 'Descrição 2', price: '19.99', categoryId: 2, stock: 3, pictureUrl: 'https://freemockupzone.com/wp-content/uploads/2022/06/Free-Packaging-Product-Box-Mockup.jpg' },
-                    { id: 3, title: 'Produto 3', description: 'Descrição 3', price: '35.00', categoryId: 3, stock: 4, pictureUrl: 'https://freemockupzone.com/wp-content/uploads/2022/06/Free-Packaging-Product-Box-Mockup.jpg' },
-                    { id: 4, title: 'Produto 4', description: 'Descrição 4', price: '101.99', categoryId: 4, stock: 5, pictureUrl: 'https://freemockupzone.com/wp-content/uploads/2022/06/Free-Packaging-Product-Box-Mockup.jpg' },
-                    { id: 5, title: 'Produto 5', description: 'Descrição 5', price: '89.99', categoryId: 5, stock: 6, pictureUrl: 'https://freemockupzone.com/wp-content/uploads/2022/06/Free-Packaging-Product-Box-Mockup.jpg' }
-                ]
-            )
-        }, 1000)
-    })
+    const prodRef = doc(db, "products", itemId);
 
-    productsGet.then(response => {
-        const findItemSelected = response.find(item => item.id == Number.parseInt(itemId))
-        const product = 
-            <ItemDetail 
-                    key={findItemSelected.id}
-                    {...findItemSelected}
-            />
-        setProduct(product)
-    })
+    getDoc(prodRef).then((snapshot) => {
+        if(snapshot.exists()) {
+            const product = 
+                <ItemDetail 
+                        {
+                            ...snapshot.data()
+                        }
+                        key={snapshot.id}
+                />
+            setProduct(product)
+        }
+    });
 
     return (
         <div className='ItemDetailContainer'>
