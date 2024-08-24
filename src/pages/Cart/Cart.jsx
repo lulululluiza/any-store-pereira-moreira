@@ -16,15 +16,34 @@ export default function Cart() {
           />
       )
     })
+
+    function CartNotEmpty() {
+      return (
+        <div className='Cart'>
+          <div className='CartItemComponent'>
+            { itensInCart }
+          </div>
+          <div className='CartCheckoutComponent'>
+            <CartCheckout />
+          </div>
+        </div>        
+      )
+    }
+
+    function CartEmpty() {
+      console.log()
+      return (
+        <div className='CartEmpty'>
+          <h1 className='CartEmptyTitle'>Seu carrinho está vazio :(</h1>
+          <img className='CartEmptyImg' src="https://cdn-icons-png.flaticon.com/512/11329/11329060.png" alt="Carrinho vazio" />
+          <p className='CartEmptyText'>Navegue entre as categorias e selecione itens para adicionar ao carrinho!</p>
+        </div>
+      )
+    }
   
   return (
-    <div className='Cart'>
-      <div className='CartItemComponent'>
-        { itensInCart }
-      </div>
-      <div className='CartCheckoutComponent'>
-        <CartCheckout />
-      </div>
-    </div>
+    <div>
+      { cart.length ? <CartNotEmpty /> : <CartEmpty /> } 
+    </div> 
   )
 }

@@ -7,3 +7,21 @@
 .CartItemComponent {
     width: 70%;
 }
+
+
+.CartEmpty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.CartEmptyTitle {
+    margin-top: 35px;
+    font-size: 35px;
+    color: #FAB529;
+}
+
+.CartEmptyImg {
+    width: 25%;
+}
