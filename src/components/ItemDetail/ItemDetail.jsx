@@ -11,7 +11,8 @@ export default function ItemDetail(props) {
     const valorSemDesconto = (parseInt(props.price) * 130) / 100
 
     function add(quantity) {
-        addToCart(props, quantity)
+        if(quantity > 0)
+            addToCart(props, quantity)
     }
 
     return (
