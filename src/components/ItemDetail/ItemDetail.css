@@ -1,13 +1,23 @@
 .ItemDetail {
   margin: 100px;
   display: flex;  
-  gap: 250px;
+  gap: 150px;
+}
+
+.ItemDetail img {
+  width: 55%;
+}
+
+.ItemDetailInfosContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .ItemDetailInfos {
   font-size: 25px;
   font-weight: 600;  
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .ItemDetailInfosPrice {
@@ -32,7 +42,11 @@
   vertical-align: text-bottom;
   background: 
   linear-gradient(90deg in hsl longer hue, red 0 50%) 0/200%;
-  animation: r 6s linear infinite;
+  animation: rainbow 6s linear infinite;
+}
+
+@keyframes rainbow {
+  to {background-position: 100%}
 }
 
 .ItemDetailInfosInstallment {
@@ -40,22 +54,24 @@
   border-radius: 5px;
   padding: 5px 10px;
   margin-top: 5px;
-  font-size: 16px;
+  margin-bottom: 10px;
+  font-size: 14px;
   font-weight: 400;
   border: 1px solid #838383;
 }
 
-@keyframes r {
-  to {background-position: 100%}
+.ItemDetailInfosStock {
+  font-size: 20px;
 }
+
+
 
 .ItemDetailBuy {
   margin-top: 20px;
   width: fit-content;
   background-color: #FAB529;
-  color: #FFFFFF;
   border: none;
   font-size: 25px;
-  padding: 10px 25px;
+  padding: 10px 20px;
   border-radius: 5px;
 }

@@ -4,22 +4,30 @@
 }
 
 .Item img {
-    max-width: 400px;
+    max-width: 300px;
 }
 
 .ItemDescription {
     font-size: 12px;
+    margin-bottom: 5px;
 }
 
 .ItemPrice {
     color: #FAB529;
+    font-size: 20px;
+}
+
+.ItemStock {
+    font-size: 14px;
     margin-bottom: 5px;
 }
 
-.Item a {
+.ItemDetails {
+    width: fit-content;
     border: 2px solid #FAB529;
     background-color: #ffca61;
-    font-size: 12px;
+    font-size: 14px;
     padding: 3px 10px;
-    border-radius: 5px;
+    border-radius: 5px;   
 }
+
