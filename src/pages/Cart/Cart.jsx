@@ -3,6 +3,7 @@ import './Cart.css'
 import { useCart } from '../../context/CartProvider'
 import CartItem from '../../components/CartItem/CartItem'
 import CartCheckout from '../../components/CartCheckout/CartCheckout'
+import CartOrderDetails from '../../components/CartOrderDetails/CartOrderDetails'
 
 export default function Cart() {
 
@@ -19,9 +20,14 @@ export default function Cart() {
 
     function CartNotEmpty() {
       return (
-        <div className='Cart'>
-          <div className='CartItemComponent'>
-            { itensInCart }
+        <div className='Cart'>          
+          <div className='CartItemDetails'>
+            <div>
+              <CartOrderDetails />
+            </div>
+            <div>
+              { itensInCart }
+            </div>
           </div>
           <div className='CartCheckoutComponent'>
             <CartCheckout />

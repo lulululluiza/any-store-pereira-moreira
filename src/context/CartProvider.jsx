@@ -44,7 +44,7 @@ export default function CartProvider({ children }) {
         cart.forEach(item => {
             TotalCart += item[0].price * item[1]
         })
-        return TotalCart.toFixed(2)
+        return Number.parseInt(TotalCart.toFixed(2))
     }
 
     function updateCart(itemId, quantity) {
@@ -60,12 +60,15 @@ export default function CartProvider({ children }) {
                 return item
                 })
             setCart(updatedCart)
-        }
-        
+        }        
+    }
+
+    function createOrder() {
+        alert('Pedido criado! Data estimada de entrega: ~999999999 dias! ')
     }
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateCart, totalItemCart, totalCart }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateCart, totalItemCart, totalCart, createOrder }}>
             { children }
         </CartContext.Provider>
     )

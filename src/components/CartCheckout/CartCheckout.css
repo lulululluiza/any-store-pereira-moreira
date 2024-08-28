@@ -4,13 +4,27 @@
     margin: 15px 0;
 }
 
-.CartCheckout p {
+.CartCheckoutValues {
+    font-size: 18px;
+}
+
+.CartCheckoutTotal {
     font-size: 30px;
     text-align: center;
 }
 
-.CartCheckout p span{
+.CartCheckoutTotal span{
     font-size: 32px;
     font-weight: bold;
     color: #FAB529;
+}
+
+.CartCheckoutFinish {
+    margin-top: 20px;
+    width: 100%;
+    font-size: 20px;
+    background-color: #FAB529;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
 }
