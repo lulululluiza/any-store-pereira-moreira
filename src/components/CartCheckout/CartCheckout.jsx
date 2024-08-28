@@ -1,8 +1,8 @@
 import './CartCheckout.css'
 import { useCart } from '../../context/CartProvider'
 
-export default function CartCheckout(props) {
-  const { cart, totalCart, createOrder } = useCart()
+export default function CartCheckout() {
+  const { cart, totalCart, createOrder, order } = useCart()
 
   return (
     <div className='CartCheckout'>

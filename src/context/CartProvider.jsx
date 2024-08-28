@@ -5,6 +5,7 @@ const CartContext = createContext()
 export default function CartProvider({ children }) {
 
     const [cart, setCart] = useState([])
+    const [order, setOrder] = useState([])
 
     function addToCart(item, quantity) {
         const isDuplicatedItem = isInCart(item.id)
@@ -68,7 +69,7 @@ export default function CartProvider({ children }) {
     }
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateCart, totalItemCart, totalCart, createOrder }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateCart, totalItemCart, totalCart, createOrder, clearCart, order, createOrder }}>
             { children }
         </CartContext.Provider>
     )

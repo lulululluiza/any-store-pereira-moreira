@@ -3,4 +3,23 @@
     border-radius: 20px;
     padding: 20px;
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.CartOrderDetails input {
+    border: 1px solid #FAB529;
+    border-radius: 10px;
+    padding: 5px; 
+    margin-bottom: 10px;   
+}
+
+.CartOrderDetailsSave {
+    margin-top: 20px;
+    width: fit-content;
+    font-size: 18px;
+    background-color: #FAB529;
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: none;
 }
