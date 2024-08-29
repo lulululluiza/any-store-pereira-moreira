@@ -65,17 +65,23 @@ export default function CartProvider({ children }) {
     }
 
     function createOrder() {
-        const fullOrder = order
-        fullOrder.items = cart
+        let fullOrder = {}
+        fullOrder.buyer = 
+            {               
+                orderName: "Fulano da Silva Sauro",
+                orderPhone: "55 52 999008899",
+                orderCpf: "09878998009",
+                orderAdress: "Rua Beltrano da Silva Silva"
+            }
+        fullOrder.items = cart.map(item => item[0])
         fullOrder.date = new Date().toLocaleDateString()
-        fullOrder.total = totalCart().toFixed(2)
-        
-        setOrder(fullOrder)
-        console.log(order.items)
+        fullOrder.total = (totalCart() + 50)
+            
+        setOrder(fullOrder)   
     }
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateCart, totalItemCart, totalCart, clearCart, order, setOrder, createOrder }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateCart, totalItemCart, totalCart, clearCart, createOrder, order }}>
             { children }
         </CartContext.Provider>
     )

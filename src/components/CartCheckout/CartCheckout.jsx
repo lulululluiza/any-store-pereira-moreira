@@ -7,12 +7,13 @@ export default function CartCheckout() {
   const { cart, totalCart, order, createOrder } = useCart()
 
   function addOrder() {
+
     createOrder()
 
     const ordersCollection = collection(db, "orders")
 
     addDoc(ordersCollection, order).then(() => {
-      alert('vai lá ver se funfou')
+      alert('Pedido confirmado! Previsão de entrega: ~9999999999')
     })
 
   }
@@ -30,7 +31,7 @@ export default function CartCheckout() {
         Total: R$ 
           <span> { (totalCart(cart) + 50).toFixed(2) }</span>
       </p>
-      <button type='button' className="CartCheckoutFinish" onClick={ addOrder }>Finalizar Pedido</button>      
+      <button id="finishOrder" type='button' className="CartCheckoutFinish" onClick={ addOrder }>Finalizar Pedido</button>      
     </div>
   )
 }
