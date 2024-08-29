@@ -5,7 +5,7 @@ const CartContext = createContext()
 export default function CartProvider({ children }) {
 
     const [cart, setCart] = useState([])
-    const [order, setOrder] = useState([])
+    const [order, setOrder] = useState({})
 
     function addToCart(item, quantity) {
         const isDuplicatedItem = isInCart(item.id)
@@ -45,7 +45,7 @@ export default function CartProvider({ children }) {
         cart.forEach(item => {
             TotalCart += item[0].price * item[1]
         })
-        return Number.parseInt(TotalCart.toFixed(2))
+        return TotalCart
     }
 
     function updateCart(itemId, quantity) {
@@ -65,11 +65,17 @@ export default function CartProvider({ children }) {
     }
 
     function createOrder() {
-        alert('Pedido criado! Data estimada de entrega: ~999999999 dias! ')
+        const fullOrder = order
+        fullOrder.items = cart
+        fullOrder.date = new Date().toLocaleDateString()
+        fullOrder.total = totalCart().toFixed(2)
+        
+        setOrder(fullOrder)
+        console.log(order.items)
     }
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateCart, totalItemCart, totalCart, createOrder, clearCart, order, createOrder }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateCart, totalItemCart, totalCart, clearCart, order, setOrder, createOrder }}>
             { children }
         </CartContext.Provider>
     )
